@@ -64,7 +64,7 @@ module Mongoid
           self.replace(@_paginated_array[self.opts[:skip]+start, self.limit_value] || [])
         else
           @_paginated_array ||= self.to_a
-          self.replace(@_paginated_array[self.opts[:skip]+start, self.limit_value])
+          self.replace(@_paginated_array[self.opts[:skip]+start, self.limit_value] || [])
         end
         true
       end
